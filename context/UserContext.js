@@ -14,7 +14,7 @@ export const UserProvider = ({ children }) => {
       if (token && id) {
         setUser({ token, id });
       }
-      console.log("token,id ok");
+      console.log("token,id ok", token);
     };
     loadUser();
   }, []);

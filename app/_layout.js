@@ -12,7 +12,10 @@ export default RootLayout = () => {
 };
 
 const SlotProvider = () => {
-  const { token, id } = useContext(UserContext);
+  const { user } = useContext(UserContext);
+
+  const token = user.token;
+  const id = user.id;
 
   // Si l'utilisateur n'est pas connecté et que la position actuelle n'est pas "(auth)", redirige vers la page d'accueil
   useEffect(() => {
@@ -23,6 +26,6 @@ const SlotProvider = () => {
     if (token && id) {
       router.replace("/home");
     }
-  }, [token, id]);
+  }, [user]);
   return <Slot />;
 };

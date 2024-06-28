@@ -26,7 +26,7 @@ export default function HomePage() {
       );
       console.log(response.data);
       const { token, id } = response.data;
-      saveUser(id, token);
+      saveUser({ id, token });
       router.navigate("home");
       alert("Bienvenue");
     } catch (error) {
